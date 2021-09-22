@@ -1,0 +1,21 @@
+{
+  "name": "forge-vite",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "fmt": "prettier -w src/**/*.js",
+    "compile": "rollup -c",
+    "watch": "rollup -cw",
+    "start": "yarn watch"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "prettier": "^2.4.1",
+    "rollup": "^2.57.0"
+  },
+  "dependencies": {
+    "@electron-forge/plugin-base": "^6.0.0-beta.61"
+  }
+}

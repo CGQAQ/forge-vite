@@ -1,0 +1,1 @@
+export { VitePlugin } from "./VitePlugin";
