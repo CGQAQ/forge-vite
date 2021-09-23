@@ -1,22 +1,29 @@
 import ForgePlugin from "@electron-forge/plugin-base";
 import Logger from "@electron-forge/web-multi-logger";
 
+
 export class VitePlugin extends ForgePlugin {
+  name = "vite";
+
   constructor(config) {
-    super();
-    this.config = config;
+    super(config);
+
     this.logger = new Logger();
-    console.log("config: ", config);
+
+    console.log("hello, vite");
+    console.log("config: ", this.config);
+
+    this.getHook = this.getHook.bind(this);
+    this.startLogic = this.startLogic.bind(this);
   }
-  getHook(hookType) {
-    console.log(hookType);
-    switch (hookType) {
-      case "":
-        break;
-    }
+
+  getHook(name) {
+    console.log("hook", name);
+    return null;
   }
-  startLogic() {
-    const tab = logger.createTab("StartLogic");
+
+  async startLogic() {
+    const tab = this.logger.createTab("StartLogic");
     tab.log("hello?");
     return false;
   }

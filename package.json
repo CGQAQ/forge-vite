@@ -1,21 +1,24 @@
 {
   "name": "forge-vite",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
-    "fmt": "prettier -w src/**/*.js",
+    "fmt": "prettier . --write --loglevel=warn",
     "compile": "rollup -c",
     "watch": "rollup -cw",
     "start": "yarn watch"
+  },
+  "dependencies": {
+    "@electron-forge/plugin-base": "^6.0.0-beta.61",
+    "@electron-forge/web-multi-logger": "^6.0.0-beta.61"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "prettier": "^2.4.1",
-    "rollup": "^2.57.0"
+    "rollup": "^2.57.0",
+    "source-map-support": "^0.5.20",
   },
-  "dependencies": {
-    "@electron-forge/plugin-base": "^6.0.0-beta.61"
-  }
+  "license": "MIT"
 }
